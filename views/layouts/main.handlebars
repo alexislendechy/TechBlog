@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Your CMS Blog</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    {{> navbar}} <!-- Include the navigation bar (if you have one) -->
+
+    <div class="container">
+        {{{body}}} <!-- This is where the content for each page will be inserted -->
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

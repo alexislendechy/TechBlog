@@ -1,0 +1,15 @@
+<h1>{{blogPost.title}}</h1>
+<p>{{blogPost.content}}</p>
+<p>Posted by {{blogPost.user.username}} on {{formatDate blogPost.createdAt}}</p>
+
+<h2>Comments</h2>
+<ul>
+    {{#each comments}}
+        <li>
+            <p>{{text}}</p>
+            <p>Comment by {{user.username}} on {{formatDate createdAt}}</p>
+        </li>
+    {{/each}}
+</ul>
+
+<!-- Add a form to leave comments here -->

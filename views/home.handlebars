@@ -1,0 +1,10 @@
+<h1>Welcome to the CMS Blog</h1>
+<ul>
+    {{#each blogPosts}}
+        <li>
+            <a href="/blog/post/{{id}}">{{title}}</a>
+            <p>{{content}}</p>
+            <p>Posted by {{user.username}} on {{formatDate createdAt}}</p>
+        </li>
+    {{/each}}
+</ul>
