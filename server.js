@@ -13,7 +13,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
   secret: process.env.SESSION_SECRET,
-  coockie: {
+  cookie: {
     maxAge: 300000,
   },
   resave: false,
@@ -27,7 +27,7 @@ app.use(session(sess));
 
 const hbs = expressHandlebars.create({helpers});
 app.engine('handlebars', hbs.engine);
-app.set('vew engine', 'handlebars');
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
