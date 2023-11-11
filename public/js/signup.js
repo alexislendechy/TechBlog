@@ -1,23 +1,24 @@
 const signupFormHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const username = document.querySelector("#username-login").value.trim();
-    const password = document.querySelector("password-login").value.trim();
+  const username = document.querySelector("#username-login").value.trim();
+  const password = document.querySelector("password-login").value.trim();
 
-    const response = await fecth('/api/user', {
-        method: 'POST',
-        body: JSON.stringify({
-            username,
-            password,
+  const response = await fecth("/api/user", {
+    method: "POST",
+    body: JSON.stringify({
+      username,
+      password,
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
+  if (response.ok) {
+    document.location.replace("/dashboard/");
+  } else {
+    alert("Something wrong!");
+  }
+};
 
-        }),
-        headers: {'Content-Type': 'application/json'},
-    });
-    if (response.ok) {
-        document.location.replace('/dashboard/');
-    } else {
-        alert("Something wrong!");
-    }
-}
-
-document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
+document
+  .querySelector("#signup-form")
+  .addEventListener("submit", signupFormHandler);

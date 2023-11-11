@@ -8,12 +8,12 @@ const deleteHandler = async () => {
   console.log(comment);
 
   if (response.ok) {
-    document.location.replace('/dashboard');
+    document.location.replace("/dashboard");
   } else {
     alert(statusText);
   }
 };
 
-if (delButton!= null) {
-  delButton.addEventListener('click', deleteHandler);
+if (delButton != null) {
+  delButton.addEventListener("click", deleteHandler);
 }

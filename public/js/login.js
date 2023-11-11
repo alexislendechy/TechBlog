@@ -1,23 +1,24 @@
 const loginFormHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const usernameEl = document.querySelector("#username-login");
-    const passwordEl = document.querySelector("password-login");
+  const usernameEl = document.querySelector("#username-login");
+  const passwordEl = document.querySelector("password-login");
 
-    const response = await fecth('/api/user/login', {
-        method: 'POST',
-        body: JSON.stringify({
-            username: usernameEl.value,
-            password: passwordEl.value,
+  const response = await fecth("/api/user/login", {
+    method: "POST",
+    body: JSON.stringify({
+      username: usernameEl.value,
+      password: passwordEl.value,
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
+  if (response.ok) {
+    document.location.replace("/dashboard/");
+  } else {
+    alert("Something wrong!");
+  }
+};
 
-        }),
-        headers: {'Content-Type': 'application/json'},
-    });
-    if (response.ok) {
-        document.location.replace('/dashboard/');
-    } else {
-        alert("Something wrong!");
-    }
-}
-
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+document
+  .querySelector(".login-form")
+  .addEventListener("submit", loginFormHandler);
