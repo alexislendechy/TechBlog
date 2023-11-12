@@ -1,9 +1,9 @@
-<nav>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/auth/login">Login</a></li>
-        <li><a href="/auth/signup">Sign Up</a></li>
-        <li><a href="/user/dashboard">Dashboard</a></li>
-        <li><a href="/auth/logout">Logout</a></li>
-    </ul>
-</nav>
+{{#each this}}
+
+<div class="flex">
+    <div class="float-left">
+        <p><strong>{{user.username}}: </strong>{{comment}} on {{formatDate created_at}}</p>
+    </div>
+</div>
+
+{{/each}}

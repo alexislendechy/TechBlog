@@ -1,15 +1,21 @@
-<h1>{{blogPost.title}}</h1>
-<p>{{blogPost.content}}</p>
-<p>Posted by {{blogPost.user.username}} on {{formatDate blogPost.createdAt}}</p>
+<div class="card">
+    <h2 class="card-header">Edit your posts</h2>
+    <form class="card-body edit-form">
 
-<h2>Comments</h2>
-<ul>
-    {{#each comments}}
-        <li>
-            <p>{{text}}</p>
-            <p>Comment by {{user.username}} on {{formatDate createdAt}}</p>
-        </li>
-    {{/each}}
-</ul>
+        <div class="form-group">
+            <label class="form-label">Title:</label>
+            <input type="text" class="form-input" name="post-title" value="{{post.title}}"/>        </div>
+        </div>
 
-<!-- Add a form to leave comments here -->
+        <div class="form-group">
+            <label class="form-label">Content:</label>
+            <textarea class="form-textarea" name="post-content">{{post.content}}</textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"><i class="bi bi-pencil"></i>Edit post</button>
+        </div>
+    </form>
+</div>
+
+<script src="/js/edit.js"></script>
